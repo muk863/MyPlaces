@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D798AD42715D785005F79DE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D798AD32715D785005F79DE /* StorageManager.swift */; };
+		3D798AD6271713E2005F79DE /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D798AD5271713E2005F79DE /* RatingControl.swift */; };
 		3D90ABAF2712CA470033496D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90ABAE2712CA470033496D /* AppDelegate.swift */; };
 		3D90ABB12712CA470033496D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90ABB02712CA470033496D /* SceneDelegate.swift */; };
 		3D90ABB62712CA470033496D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D90ABB42712CA470033496D /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		34999BBAA1C8A9A58898414F /* Pods-MyPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.debug.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		3D798AD32715D785005F79DE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3D798AD5271713E2005F79DE /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		3D90ABAB2712CA470033496D /* MyPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D90ABAE2712CA470033496D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D90ABB02712CA470033496D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3D798AD32715D785005F79DE /* StorageManager.swift */,
 				3D90ABC22712CECC0033496D /* MainViewController.swift */,
 				3D90ABC42712EF3A0033496D /* CustomTableViewCell.swift */,
+				3D798AD5271713E2005F79DE /* RatingControl.swift */,
 				3D90ABC8271334AD0033496D /* NewPlaceViewController.swift */,
 				3D90ABB42712CA470033496D /* Main.storyboard */,
 				3D90ABB72712CA480033496D /* Assets.xcassets */,
@@ -222,6 +225,7 @@
 				3D90ABC9271334AD0033496D /* NewPlaceViewController.swift in Sources */,
 				3D90ABAF2712CA470033496D /* AppDelegate.swift in Sources */,
 				3D798AD42715D785005F79DE /* StorageManager.swift in Sources */,
+				3D798AD6271713E2005F79DE /* RatingControl.swift in Sources */,
 				3D90ABC727131B700033496D /* PlaceModel.swift in Sources */,
 				3D90ABC52712EF3A0033496D /* CustomTableViewCell.swift in Sources */,
 				3D90ABB12712CA470033496D /* SceneDelegate.swift in Sources */,

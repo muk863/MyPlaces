@@ -145,6 +145,23 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="SFH-gh-d69">
+                                        <rect key="frame" x="0.0" y="519.5" width="414" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SFH-gh-d69" id="Ysp-K5-FTL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V3b-Ap-479" customClass="RatingControl" customModule="MyPlaces" customModuleProvider="target">
+                                                    <rect key="frame" x="81" y="48" width="252" height="44"/>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="V3b-Ap-479" firstAttribute="centerX" secondItem="Ysp-K5-FTL" secondAttribute="centerX" id="qjq-sg-uM8"/>
+                                                <constraint firstItem="V3b-Ap-479" firstAttribute="centerY" secondItem="Ysp-K5-FTL" secondAttribute="centerY" id="tFz-td-dGj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -170,6 +187,7 @@
                         <outlet property="placeLocation" destination="sMr-WX-fpR" id="GFk-St-akI"/>
                         <outlet property="placeName" destination="puX-vU-c8v" id="rGo-zT-mS9"/>
                         <outlet property="placeType" destination="m2d-lX-Syb" id="Eya-mn-kvX"/>
+                        <outlet property="ratingControl" destination="V3b-Ap-479" id="t7s-d9-QvJ"/>
                         <outlet property="saveButton" destination="LQP-jj-rid" id="Iho-7T-Xlu"/>
                     </connections>
                 </tableViewController>
@@ -186,6 +204,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-vW-jay">
+                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
+                                <segments>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="1hT-ig-tga" eventType="valueChanged" id="lQz-ve-a3S"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="I5P-sk-Fdv">
                                 <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,39 +234,56 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="KZA-mE-vob">
-                                                    <rect key="frame" x="96" y="8" width="302" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="212" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihG-XK-iy6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVf-Di-3ya">
-                                                            <rect key="frame" x="0.0" y="27.5" width="302" height="20"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="212" height="20"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZZ-u7-XHL">
-                                                            <rect key="frame" x="0.0" y="50.5" width="302" height="18.5"/>
+                                                            <rect key="frame" x="0.0" y="50.5" width="212" height="18.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="31" translatesAutoresizingMaskIntoConstraints="NO" id="xVs-mH-9fc" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="316" y="27" width="90" height="31"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="k4r-Wl-YN3"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="KZA-mE-vob" secondAttribute="trailing" constant="16" id="MaS-ee-5vV"/>
+                                                <constraint firstAttribute="trailing" secondItem="xVs-mH-9fc" secondAttribute="trailing" constant="8" id="8GK-s1-icz"/>
                                                 <constraint firstItem="KZA-mE-vob" firstAttribute="leading" secondItem="Uzs-oG-oai" secondAttribute="trailing" constant="16" id="Pn3-ZZ-4Jx"/>
                                                 <constraint firstItem="Uzs-oG-oai" firstAttribute="centerY" secondItem="xKi-j4-nm8" secondAttribute="centerY" id="ZgV-Xj-6mM"/>
+                                                <constraint firstItem="xVs-mH-9fc" firstAttribute="leading" secondItem="KZA-mE-vob" secondAttribute="trailing" constant="8" id="gRV-8b-SQE"/>
+                                                <constraint firstItem="xVs-mH-9fc" firstAttribute="centerY" secondItem="xKi-j4-nm8" secondAttribute="centerY" id="ln7-tr-Nms"/>
                                                 <constraint firstItem="KZA-mE-vob" firstAttribute="top" secondItem="xKi-j4-nm8" secondAttribute="top" constant="8" id="nb2-FQ-JJZ"/>
                                                 <constraint firstItem="Uzs-oG-oai" firstAttribute="leading" secondItem="xKi-j4-nm8" secondAttribute="leading" constant="15" id="ukJ-vk-473"/>
                                                 <constraint firstAttribute="bottom" secondItem="KZA-mE-vob" secondAttribute="bottom" constant="8" id="wN2-ay-YZi"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="xVs-mH-9fc" id="n1u-ex-Qgr"/>
                                             <outlet property="imageOfPlace" destination="Uzs-oG-oai" id="7tO-cK-xe8"/>
                                             <outlet property="locationLabel" destination="TVf-Di-3ya" id="1ii-Dz-PCX"/>
                                             <outlet property="nameLabel" destination="ihG-XK-iy6" id="wvc-Qa-h06"/>
@@ -252,16 +297,6 @@
                                     <outlet property="delegate" destination="1hT-ig-tga" id="KrV-hh-qNe"/>
                                 </connections>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CGI-vW-jay">
-                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
-                                <segments>
-                                    <segment title="Date"/>
-                                    <segment title="Name"/>
-                                </segments>
-                                <connections>
-                                    <action selector="sortSelection:" destination="1hT-ig-tga" eventType="valueChanged" id="lQz-ve-a3S"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wy4-Kj-QkR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -332,12 +367,22 @@
             <point key="canvasLocation" x="1138" y="-707"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="V3b-Ap-479">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
+        <designable name="xVs-mH-9fc">
+            <size key="intrinsicContentSize" width="90" height="31"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="z3u-fy-UsK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
