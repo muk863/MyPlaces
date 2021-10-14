@@ -18,6 +18,7 @@
 		3D90ABC52712EF3A0033496D /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90ABC42712EF3A0033496D /* CustomTableViewCell.swift */; };
 		3D90ABC727131B700033496D /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90ABC627131B700033496D /* PlaceModel.swift */; };
 		3D90ABC9271334AD0033496D /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D90ABC8271334AD0033496D /* NewPlaceViewController.swift */; };
+		3DF860CE27181C630033315D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF860CD27181C630033315D /* MapViewController.swift */; };
 		EE846C045EEC46C9A8EADF80 /* Pods_MyPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DE07DD6B5362B4ED141D80 /* Pods_MyPlaces.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		3D90ABC42712EF3A0033496D /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		3D90ABC627131B700033496D /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		3D90ABC8271334AD0033496D /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
+		3DF860CD27181C630033315D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D41EAE98034CCB512BFC5EBA /* Pods-MyPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlaces.release.xcconfig"; path = "Target Support Files/Pods-MyPlaces/Pods-MyPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		D4DE07DD6B5362B4ED141D80 /* Pods_MyPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				3D90ABC42712EF3A0033496D /* CustomTableViewCell.swift */,
 				3D798AD5271713E2005F79DE /* RatingControl.swift */,
 				3D90ABC8271334AD0033496D /* NewPlaceViewController.swift */,
+				3DF860CD27181C630033315D /* MapViewController.swift */,
 				3D90ABB42712CA470033496D /* Main.storyboard */,
 				3D90ABB72712CA480033496D /* Assets.xcassets */,
 				3D90ABB92712CA480033496D /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				3D90ABC9271334AD0033496D /* NewPlaceViewController.swift in Sources */,
 				3D90ABAF2712CA470033496D /* AppDelegate.swift in Sources */,
 				3D798AD42715D785005F79DE /* StorageManager.swift in Sources */,
+				3DF860CE27181C630033315D /* MapViewController.swift in Sources */,
 				3D798AD6271713E2005F79DE /* RatingControl.swift in Sources */,
 				3D90ABC727131B700033496D /* PlaceModel.swift in Sources */,
 				3D90ABC52712EF3A0033496D /* CustomTableViewCell.swift in Sources */,
