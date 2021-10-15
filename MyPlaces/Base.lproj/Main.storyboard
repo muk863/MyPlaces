@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,7 +39,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="map"/>
                                                     <connections>
-                                                        <segue destination="L0Q-Xg-KFQ" kind="presentation" identifier="showMap" id="mxJ-UU-kmV"/>
+                                                        <segue destination="L0Q-Xg-KFQ" kind="presentation" identifier="showPlace" id="mxJ-UU-kmV"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -98,16 +97,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="u72-uw-nEl">
-                                                    <rect key="frame" x="16" y="8" width="382" height="63"/>
+                                                    <rect key="frame" x="16" y="8" width="348" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaF-Kk-VJa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="28.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="348" height="28.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-WX-fpR">
-                                                            <rect key="frame" x="0.0" y="36.5" width="382" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="36.5" width="348" height="26.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
@@ -116,11 +115,25 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16y-Fc-6SI">
+                                                    <rect key="frame" x="372" y="47" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="22" id="Wq2-fF-wm1"/>
+                                                        <constraint firstAttribute="height" constant="22" id="Yh0-dW-enR"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="Placeholder"/>
+                                                    <connections>
+                                                        <segue destination="L0Q-Xg-KFQ" kind="presentation" identifier="getAddress" id="Szb-XW-7ih"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="u72-uw-nEl" firstAttribute="leading" secondItem="Iwy-0q-Rpp" secondAttribute="leading" constant="16" id="3Nd-ch-DgC"/>
-                                                <constraint firstAttribute="trailing" secondItem="u72-uw-nEl" secondAttribute="trailing" constant="16" id="LXu-pf-Sg1"/>
+                                                <constraint firstItem="16y-Fc-6SI" firstAttribute="centerY" secondItem="sMr-WX-fpR" secondAttribute="centerY" id="Fj9-23-bb5"/>
                                                 <constraint firstAttribute="bottom" secondItem="u72-uw-nEl" secondAttribute="bottom" constant="4" id="Ogx-De-WvI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="16y-Fc-6SI" secondAttribute="trailing" id="c7Q-HV-Fnn"/>
+                                                <constraint firstItem="16y-Fc-6SI" firstAttribute="leading" secondItem="u72-uw-nEl" secondAttribute="trailing" constant="8" id="fn7-QY-rv8"/>
                                                 <constraint firstItem="u72-uw-nEl" firstAttribute="top" secondItem="Iwy-0q-Rpp" secondAttribute="top" constant="8" id="wOm-VB-XKa"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -214,42 +227,100 @@
         <!--Map View Controller-->
         <scene sceneID="4hJ-Ea-3nc">
             <objects>
-                <viewController id="L0Q-Xg-KFQ" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="L0Q-Xg-KFQ" customClass="MapViewController" customModule="MyPlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="00C-BO-PRJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FhP-Ct-UOi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hza-2z-Lyk">
-                                <rect key="frame" x="334" y="40" width="40" height="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="Lw8-m4-YgG">
+                                <rect key="frame" x="187" y="408" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="nfC-M9-3bi"/>
-                                    <constraint firstAttribute="width" constant="40" id="tzd-wi-g2p"/>
+                                    <constraint firstAttribute="width" constant="40" id="JgH-mT-iaB"/>
+                                    <constraint firstAttribute="height" constant="40" id="Tzh-Sd-8hA"/>
                                 </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-ea-ozh">
+                                <rect key="frame" x="344" y="84" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4DH-xk-8dE"/>
+                                    <constraint firstAttribute="height" constant="30" id="f09-cz-cNW"/>
+                                </constraints>
+                                <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="closeVC" destination="L0Q-Xg-KFQ" eventType="touchUpInside" id="aFQ-HG-OcX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5I-XT-wKO">
+                                <rect key="frame" x="344" y="696" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="4MR-ZV-yu3"/>
+                                    <constraint firstAttribute="height" constant="30" id="e3L-eS-BJI"/>
+                                </constraints>
+                                <state key="normal" image="Location"/>
+                                <connections>
+                                    <action selector="centerViewInUserLocation" destination="L0Q-Xg-KFQ" eventType="touchUpInside" id="jle-Iy-h6k"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-B7-6nU">
+                                <rect key="frame" x="20" y="178" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DoS-G4-NRw">
+                                <rect key="frame" x="159" y="773" width="96" height="49"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
-                                    <imageReference key="image" image="multiply" catalog="system" symbolScale="large"/>
-                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Done">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="closeVC" destination="L0Q-Xg-KFQ" eventType="touchUpInside" id="eh5-R9-SkL"/>
+                                    <action selector="doneButtonPressed" destination="L0Q-Xg-KFQ" eventType="touchUpInside" id="Xdg-CX-1bQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQp-ve-0H2">
+                                <rect key="frame" x="182" y="772" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="FNm-FM-h6Y"/>
+                                    <constraint firstAttribute="height" constant="50" id="co3-82-IJh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="L0Q-Xg-KFQ" eventType="touchUpInside" id="yIi-DJ-nHc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LMS-99-gMq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FhP-Ct-UOi" firstAttribute="top" secondItem="bbg-B7-6nU" secondAttribute="bottom" constant="-214" id="4Hq-uV-d89"/>
+                            <constraint firstItem="gQp-ve-0H2" firstAttribute="centerX" secondItem="00C-BO-PRJ" secondAttribute="centerX" id="5wu-Cb-Gvv"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="bottom" secondItem="u5I-XT-wKO" secondAttribute="bottom" constant="136" id="7Fa-vd-zyc"/>
                             <constraint firstAttribute="bottom" secondItem="FhP-Ct-UOi" secondAttribute="bottom" id="8Jc-OI-YDm"/>
+                            <constraint firstItem="Lw8-m4-YgG" firstAttribute="centerX" secondItem="00C-BO-PRJ" secondAttribute="centerX" id="C4P-UX-zjp"/>
+                            <constraint firstItem="b0J-ea-ozh" firstAttribute="top" secondItem="LMS-99-gMq" secondAttribute="top" constant="40" id="E8G-Qj-s94"/>
                             <constraint firstItem="FhP-Ct-UOi" firstAttribute="leading" secondItem="LMS-99-gMq" secondAttribute="leading" id="KIx-T3-Ocr"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="trailing" secondItem="u5I-XT-wKO" secondAttribute="trailing" constant="40" id="Kkj-mB-BMV"/>
                             <constraint firstItem="FhP-Ct-UOi" firstAttribute="trailing" secondItem="LMS-99-gMq" secondAttribute="trailing" id="MaO-UU-tyJ"/>
-                            <constraint firstItem="LMS-99-gMq" firstAttribute="trailing" secondItem="Hza-2z-Lyk" secondAttribute="trailing" constant="40" id="YdY-jw-9wV"/>
-                            <constraint firstItem="Hza-2z-Lyk" firstAttribute="top" secondItem="LMS-99-gMq" secondAttribute="top" constant="40" id="wN1-i4-qdQ"/>
+                            <constraint firstItem="Lw8-m4-YgG" firstAttribute="centerY" secondItem="00C-BO-PRJ" secondAttribute="centerY" constant="-20" id="Ser-7O-H5W"/>
+                            <constraint firstItem="DoS-G4-NRw" firstAttribute="centerX" secondItem="00C-BO-PRJ" secondAttribute="centerX" id="TyN-kt-MJy"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="trailing" secondItem="b0J-ea-ozh" secondAttribute="trailing" constant="40" id="kg3-ix-2Zg"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="bottom" secondItem="DoS-G4-NRw" secondAttribute="bottom" constant="40" id="s4f-qB-8zQ"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="bottom" secondItem="gQp-ve-0H2" secondAttribute="bottom" constant="40" id="tTs-XC-2zM"/>
+                            <constraint firstItem="bbg-B7-6nU" firstAttribute="leading" secondItem="LMS-99-gMq" secondAttribute="leading" constant="20" id="w5H-jV-z7P"/>
+                            <constraint firstItem="LMS-99-gMq" firstAttribute="trailing" secondItem="bbg-B7-6nU" secondAttribute="trailing" constant="20" id="zO6-hg-W32"/>
                             <constraint firstItem="FhP-Ct-UOi" firstAttribute="top" secondItem="00C-BO-PRJ" secondAttribute="top" id="zQT-VC-mKf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="bbg-B7-6nU" id="Epd-PA-ZX9"/>
+                        <outlet property="doneButton" destination="DoS-G4-NRw" id="9g4-WH-f1C"/>
+                        <outlet property="goButton" destination="gQp-ve-0H2" id="S0E-SO-cgL"/>
+                        <outlet property="mapPinImage" destination="Lw8-m4-YgG" id="P8v-cL-5Q0"/>
                         <outlet property="mapView" destination="FhP-Ct-UOi" id="gkh-d2-4Ww"/>
                     </connections>
                 </viewController>
@@ -437,20 +508,22 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="Szb-XW-7ih"/>
         <segue reference="z3u-fy-UsK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
+        <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="Pin" width="42" height="42"/>
+        <image name="Placeholder" width="22" height="22"/>
+        <image name="cancel" width="128" height="128"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
         <image name="map" width="50" height="50"/>
-        <image name="multiply" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
